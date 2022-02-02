@@ -1,6 +1,7 @@
 hmtl{
 	font-size: 16px;
 }
+
 body {
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 	display: flex;
@@ -14,18 +15,11 @@ body {
 	width: 90%;
 	display: flex;
 	align-items: center;
-	flex-flow: row wrap; 
 	justify-content: center;
+	flex-flow: row wrap; 
+	
 }
-header ul li {
-	list-style-type: none;
-	margin: 20px;
-	text-align: center;
-}
-.border {
-	border-top: 3px solid #77a466;
-	width: 100%;
-}
+
 h1,
 h2,
 h3 {
@@ -33,14 +27,14 @@ h3 {
 	text-transform: uppercase;
 	font-weight: 700;
 }
+
 h1 {
 	font-size: 1.875em;
-	padding: 0px;
-	margin-bottom: 10px;
 }
 h2 {
 	font-size: 1.125em;
 }
+
 h3 {
 	font-size: 0.75em;
 }
@@ -48,16 +42,34 @@ h3 {
 p {
 	font-size: 0.875em;
 	line-height: 21px;
-    padding: 0 30px;
+}
+
+.border {
+	border-top: 3px solid #77a466;
+	width: 100%;
+}
+ul {
+	margin: 0;
 }
 
 /*The widths are in a percentage!*/
+/**** I handled this section differently from the solution code  uses a flex: 1 1 auto, 
+no text-align or width setting outside of flex, made a class .border for the line divider, no header h1 formatting******/
 header {
-  	align-items: center; 
+	display: flex;
+  	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	flex: 1 1 auto; 
 }
+/*******************************/
 
 header h1 span {
 	color: #77a466;
+}
+
+header nav {
+	padding: 20px 0px;
 }
 
 header nav ul {
@@ -68,35 +80,39 @@ header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 0.875em;
-	padding: 0 10px;
+	padding: 10px 0;
 }
+
 header nav ul li a{
 	text-decoration: none;
 	color:#77a466;
 }
 
+header li {
+	list-style: none;
+	justify-content: center;
+}
+
 /*The widths are in a percentage!*/
+/***** This section also slightly differs from solution code, uses align-items top instead of center ********/
 .top-section,
 .bottom-section {
-	margin: 0 auto;
 	display: flex;
   	justify-content: center;
   	align-items: top;
-	flex-flow: wrap;
+	flex-flow: row wrap;
 }
+/***************************************/
 
-.main-image {
-	height: auto;
-}
+/**** I made the choice to have the border that appears connected 
+to the image be connected for both top and bottom, not the weird usage border from the header h1 ******/
+
 .main-image img {
 	width: 100%;
 	border-bottom: 3px solid #77a466;
 	border-top: 3px solid #77a466;
 }
 
-.main-title {
-	height: auto;
-}
 .main-title h2 {
 	text-align: left;
 	padding: 5px 0;
@@ -105,16 +121,14 @@ header nav ul li a{
 .main-title p {
 	padding: 0;
 	font-size: 1em;
-	line-height: 25px;
+	line-height: 1.5625em;
 }
-
 .section-one,
 .section-two,
 .section-three {
 	width: 100%;
 	height: auto;
 	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
 }
 
 .section-one h3 {
@@ -123,7 +137,7 @@ header nav ul li a{
 
 .section-two h3,
 .section-three h3 {
-	padding: 10px 30px;
+	padding: 10px 0px;
 }
 
 .menu {
@@ -138,7 +152,7 @@ header nav ul li a{
 .reviews {
 	color: #333;
 	font-size: 1em;
-	line-height: 21px;
+	line-height: 1.3125em;
 }
 
 .address {
@@ -147,70 +161,64 @@ header nav ul li a{
 }
 
 /*The widths are in a percentage!*/
-footer {
-	margin: 0 auto;
-	text-align: center;
-}
+/****** My footer solution is much more compact  ;-)********/
+
 footer span {
 	font-family: 'Galada', cursive;
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
 }
-/*---- Tablet styling -----------*/
+/***********---- Tablet styling -----------**************/
 @media all and (min-width:768px) {
-    /* Tablet styles here */
- 
-}
-
-/* Deskto styles */
-@media all and (min-width:1200px) {
-    /* Desktop styles here */
-	.container{
-		max-width: 1200px;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		flex-flow: row wrap; 
-	}
-	h1 {
-		font-size: 1.875em;
-		width: 55%;
-	}
-	header {
-		display: flex;
-		  align-items: center; 
-		flex: 1 1 auto;
-	}
-	header nav ul {
-		margin: 0;
-		padding: 0;
-		align-items: flex-end;
-	}
-	header nav ul li {
-		display: inline;
-	}
-	.top-section,
-.bottom-section {
-	margin: 0 auto;
-	display: flex;
-  	justify-content: center;
-  	align-items: top;
-	flex-flow: wrap;
-}
-.main-image img {
-	border-bottom: 3px solid #77a466;
-	border-top: 3px solid #77a466;
-}
+   
 .section-one,
 .section-two,
 .section-three {
 	width: 33%;
-	height: auto;
-	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 }
 .section-two {
 	border-left: 1px solid #eee;
 	border-right: 1px solid #eee;
 }
+.section-two h3,
+.section-three h3 {
+	padding: 10px 30px;
+}
+
+.address, .reviews {
+	padding-left: 30px;
+}
+.reviews {
+	padding-right: 30px;
+}
+ 
+/******************** Desktop styles *******************/
+@media all and (min-width:1200px) {
+
+	.border{
+		border-top: none;
+	}
+
+	/***** I suspect my earlier use of flex: 1 1 auto; in the mobile section 
+	for header is impacting my ability to get the h1 and nav to sit side by 
+	side on the same line, but I can't figure out the solution with how I've completed the project HELP! ***/
+	header {
+		justify-content: space-between;
+	}
+
+	header h1 {
+        width: 30%;
+        padding: 0;
+        border-bottom: none;
+        text-align: left;
+    }
+
+	header nav {
+		width: 40%
+	}
+	header nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
