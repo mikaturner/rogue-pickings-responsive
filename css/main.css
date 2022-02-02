@@ -199,6 +199,7 @@ footer span {
 
 	.border{
 		border-top: none;
+		width: 0;
 	}
 
 	/***** I suspect my earlier use of flex: 1 1 auto; in the mobile section 
